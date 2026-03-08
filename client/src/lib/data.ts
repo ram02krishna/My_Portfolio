@@ -48,12 +48,11 @@ export const projects: Project[] = [
       "Multer",
       "Cloudinary",
     ],
-    link: "https://expense-tracker-52hv.vercel.app/login",
+    link: "https://expense-tracker-omega-wine.vercel.app/login",
     repo: "https://github.com/ByteOps02/Expense_Tracker",
     featured: true,
     images: [
-      "/images/expense_tracker.png",
-      "/images/expense_tracker_1.png"
+      "/images/expense_tracker.png"
     ],
   },
   {
@@ -77,12 +76,11 @@ export const projects: Project[] = [
       "QR Code",
       "EmailJs"
     ],
-    link: "https://dbms-project-indol.vercel.app/",
+    link: "https://visitor-management-system-xi.vercel.app/",
     repo: "https://github.com/ByteOps02/DBMS_Project",
     featured: true,
     images: [
-      "/images/VMS_1.png",
-      "/images/visitor_management_system.png"
+      "/images/VMS.png"
     ],
   },
   {
@@ -99,8 +97,7 @@ export const projects: Project[] = [
     repo: "https://github.com/ByteOps02/Snufi_Pharma",
     featured: true,
     images: [
-      "/images/snufi_pharma_1.png",
-      "/images/snufi_pharma_2.png"
+      "/images/snufi_pharma.png"
     ],
   },
   {
@@ -122,12 +119,11 @@ export const projects: Project[] = [
       "Redis",
       "JWT Authentication"
     ],
-    link: "https://url-shortener-y48t.vercel.app/",
+    link: "https://url-shortener-lac-five.vercel.app",
     repo: "https://github.com/ByteOps02/URL_Shortener",
     featured: true,
     images: [
-      "/images/Shortify_HomePage.png",
-      "/images/Shortify_Dashboard.png"
+      "/images/Shortify.png"
     ],
   },
 ];
