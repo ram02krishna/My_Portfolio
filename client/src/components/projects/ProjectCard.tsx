@@ -147,38 +147,39 @@ function ProjectCard({ project }: { project: Project }) {
           )}
         </div>
 
-        <div className="p-5 sm:p-6 relative bg-card">
-          <h3 className="text-xl sm:text-2xl font-bold font-heading group-hover:text-primary transition-colors duration-200 mb-2">
-            {project.title}
-          </h3>
+        <div className="p-5 sm:p-6 relative bg-card/80 backdrop-blur-sm">
+          <div className="flex justify-between items-start mb-3">
+            <h3 className="text-xl sm:text-2xl font-bold font-heading group-hover:text-primary transition-colors duration-300">
+              {project.title}
+            </h3>
+          </div>
 
-          <p className="text-muted-foreground text-sm sm:text-base mb-4 line-clamp-2 leading-relaxed">
+          <p className="text-muted-foreground text-sm sm:text-base mb-6 line-clamp-2 leading-relaxed font-light">
             {project.description}
           </p>
 
-          <div className="flex flex-wrap gap-1.5">
-            {project.technologies.slice(0, 4).map((tech) => (
-              <Badge
+          <div className="flex flex-wrap gap-2 mb-6">
+            {project.technologies.slice(0, 3).map((tech) => (
+              <span
                 key={tech}
-                variant="secondary"
-                className="rounded-full text-xs font-normal px-2.5 py-0.5 hover:bg-primary/20 hover:scale-110 transition-all duration-200"
+                className="text-[10px] uppercase tracking-wider font-bold px-2.5 py-1 rounded-md bg-secondary text-secondary-foreground border border-border/50 group-hover:border-primary/30 transition-colors duration-300"
               >
                 {tech}
-              </Badge>
+              </span>
             ))}
-            {project.technologies.length > 4 && (
-              <Badge
-                variant="outline"
-                className="rounded-full text-xs font-normal px-2.5 py-0.5"
-              >
-                +{project.technologies.length - 4}
-              </Badge>
+            {project.technologies.length > 3 && (
+              <span className="text-[10px] uppercase tracking-wider font-bold px-2.5 py-1 rounded-md bg-muted text-muted-foreground">
+                +{project.technologies.length - 3}
+              </span>
             )}
           </div>
 
-          <div className="mt-6 flex justify-end">
-            <Button variant="outline" size="sm" className="rounded-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
-              View Project <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+          <div className="flex items-center justify-between pt-4 border-t border-border/40 group-hover:border-primary/20 transition-colors duration-300">
+            <span className="text-xs font-medium text-muted-foreground group-hover:text-primary transition-colors duration-300 flex items-center gap-1">
+              Case Study <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
+            </span>
+            <Button variant="ghost" size="sm" className="rounded-full h-8 w-8 p-0 hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+              <ArrowUpRight className="h-4 w-4" />
             </Button>
           </div>
         </div>

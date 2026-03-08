@@ -6,6 +6,7 @@ import TechStack from '@/components/home/TechStack';
 import Services from '@/components/home/Services';
 import Experience from '@/components/home/Experience';
 import ProjectCard from '@/components/projects/ProjectCard';
+import HomeContact from '@/components/home/HomeContact';
 
 import { getFeaturedProjects } from '@/lib/data';
 import { Button } from '@/components/ui/button';
@@ -89,6 +90,8 @@ export default function Home() {
             </Link>
           </div>
         </section>
+
+        <HomeContact />
       </motion.div>
 
       <Footer />

@@ -41,7 +41,7 @@ function Router() {
 
 function App() {
   return (
-    <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} storageKey="portfolio-theme-v2">
+    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} storageKey="portfolio-theme-v2">
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
           <ScrollToTop />

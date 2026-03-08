@@ -7,43 +7,57 @@ const technologies = [
 
 export default function TechStack() {
   return (
-    <section className="py-12 md:py-16 overflow-hidden bg-gradient-to-b from-background via-muted/10 to-background border-y border-border/50 relative">
+    <section className="py-20 md:py-24 overflow-hidden bg-background relative">
       {/* Background decoration */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:40px_40px]" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808005_1px,transparent_1px),linear-gradient(to_bottom,#80808005_1px,transparent_1px)] bg-[size:60px_60px]" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
-      <div className="container mx-auto px-6 mb-8 text-center relative z-10">
-        <motion.p
+      <div className="container mx-auto px-6 mb-12 text-center relative z-10">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-sm text-muted-foreground font-medium uppercase tracking-widest"
+          className="flex flex-col items-center"
         >
-          Crafting Applications While Continuously Learning
-        </motion.p>
+          <span className="text-primary font-bold text-xs uppercase tracking-[0.3em] mb-4">Expertise</span>
+          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">Powered by Modern Tech</h2>
+          <div className="w-12 h-1 bg-primary rounded-full" />
+        </motion.div>
       </div>
 
-      <div className="relative flex overflow-hidden group">
+      <div className="relative flex overflow-hidden group py-4">
         <div className="flex animate-marquee whitespace-nowrap">
           {technologies.map((tech, index) => (
-            <span
+            <div
               key={index}
-              className="mx-8 text-3xl md:text-6xl font-heading font-bold text-muted-foreground/20 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-primary hover:via-purple-500 hover:to-blue-500 transition-all duration-300 cursor-default hover:scale-110"
+              className="mx-12 flex items-center gap-4 group/item"
             >
-              {tech}
-            </span>
+              <span className="text-4xl md:text-7xl font-heading font-black text-muted-foreground/10 group-hover/item:text-primary transition-all duration-500 cursor-default select-none transform group-hover/item:scale-110 group-hover/item:-rotate-2">
+                {tech}
+              </span>
+              <div className="w-2 h-2 rounded-full bg-primary/20 group-hover/item:bg-primary transition-colors duration-500" />
+            </div>
           ))}
         </div>
-        <div className="absolute top-0 animate-marquee2 whitespace-nowrap flex">
+        <div className="absolute top-4 animate-marquee2 whitespace-nowrap flex">
           {technologies.map((tech, index) => (
-            <span
+            <div
               key={`duplicate-${index}`}
-              className="mx-8 text-3xl md:text-6xl font-heading font-bold text-muted-foreground/20 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-primary hover:via-purple-500 hover:to-blue-500 transition-all duration-300 cursor-default hover:scale-110"
+              className="mx-12 flex items-center gap-4 group/item"
             >
-              {tech}
-            </span>
+              <span className="text-4xl md:text-7xl font-heading font-black text-muted-foreground/10 group-hover/item:text-primary transition-all duration-500 cursor-default select-none transform group-hover/item:scale-110 group-hover/item:-rotate-2">
+                {tech}
+              </span>
+              <div className="w-2 h-2 rounded-full bg-primary/20 group-hover/item:bg-primary transition-colors duration-500" />
+            </div>
           ))}
         </div>
       </div>
+      
+      {/* Overlay for fading edges */}
+      <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-background to-transparent z-10" />
+      <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-background to-transparent z-10" />
     </section>
   );
 }

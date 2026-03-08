@@ -56,9 +56,17 @@ function Hero() {
 
         {/* Headline */}
         <div className="mb-8 flex flex-col items-center w-full">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold tracking-tight leading-[1.1] w-full flex flex-col items-center">
-            <TextReveal text="Building Digital" className="justify-center" delay={0.2} />
-            <TextReveal text="Experiences." className="justify-center font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-500 to-blue-500 py-2" delay={0.4} />
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-extrabold tracking-tight leading-[1] w-full flex flex-col items-center">
+            <TextReveal text="Crafting Digital" className="justify-center" delay={0.2} />
+            <span className="relative">
+              <TextReveal text="Masterpieces" className="justify-center text-gradient py-2 px-4" delay={0.4} />
+              <motion.div 
+                className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary via-purple-500 to-blue-500 rounded-full"
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ delay: 1, duration: 0.8 }}
+              />
+            </span>
           </h1>
         </div>
 
@@ -67,19 +75,17 @@ function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
+          className="text-lg md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed font-light"
         >
-          I architect <TypewriterLoop
+          Transforming complex ideas into <TypewriterLoop
             words={[
-              'immersive web experiences',
-              'scalable enterprise systems',
-              'next-gen digital products',
-              'pixel-perfect interfaces'
+              'elegant web solutions',
+              'robust backend systems',
+              'interactive user journeys',
+              'high-performance apps'
             ]}
-            className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-500 to-blue-500"
-          /> that leave a lasting impact.
-          <br className="hidden md:block" />
-          Meticulously crafted with a focus on motion, performance, and user-centric design.
+            className="font-semibold text-primary"
+          /> with precision and passion.
         </motion.p>
 
         {/* Buttons */}
@@ -87,15 +93,22 @@ function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          className="flex flex-col sm:flex-row gap-6 justify-center items-center"
         >
           <Link href="/projects">
             <MagneticButton
               size="lg"
-              className="rounded-full px-8 text-base sm:text-lg h-12 sm:h-14 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-primary/25 transition-all duration-200 group"
+              className="rounded-full px-10 text-lg h-14 sm:h-16 bg-primary hover:bg-primary/90 text-primary-foreground shadow-2xl hover:shadow-primary/40 transition-all duration-300 group overflow-hidden relative"
             >
-              View Projects
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <span className="relative z-10 flex items-center">
+                Explore Work
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </span>
+              <motion.div 
+                className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0"
+                animate={{ x: ['100%', '-100%'] }}
+                transition={{ repeat: Infinity, duration: 2, ease: 'linear' }}
+              />
             </MagneticButton>
           </Link>
 
@@ -103,9 +116,9 @@ function Hero() {
             <MagneticButton
               variant="outline"
               size="lg"
-              className="rounded-full px-8 text-base sm:text-lg h-12 sm:h-14 backdrop-blur-sm bg-background/30 border-border hover:bg-background/50"
+              className="rounded-full px-10 text-lg h-14 sm:h-16 backdrop-blur-md bg-background/20 border-primary/20 hover:border-primary/50 hover:bg-background/40 transition-all duration-300"
             >
-              Contact Me
+              Get in Touch
             </MagneticButton>
           </Link>
         </motion.div>
@@ -115,21 +128,21 @@ function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8, duration: 0.4 }}
-          className="mt-8 flex flex-wrap justify-center gap-4 md:gap-6 text-xs md:text-sm text-muted-foreground"
+          className="mt-16 flex flex-wrap justify-center gap-4 text-sm"
         >
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-            <span>Available for freelance</span>
+          <div className="flex items-center gap-2 px-4 py-2 rounded-full glass-card border-green-500/20">
+            <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse shadow-[0_0_10px_rgba(34,197,94,0.5)]"></div>
+            <span className="text-muted-foreground font-medium">Available for Hire</span>
           </div>
 
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-primary"></div>
-            <span>0 Years Experience (Fresher)</span>
+          <div className="flex items-center gap-2 px-4 py-2 rounded-full glass-card border-primary/20">
+            <div className="w-2 h-2 rounded-full bg-primary shadow-[0_0_10px_rgba(var(--primary),0.5)]"></div>
+            <span className="text-muted-foreground font-medium">Self-Taught Developer</span>
           </div>
 
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-blue-500"></div>
-            <span>Remote Worldwide as well as OnSite</span>
+          <div className="flex items-center gap-2 px-4 py-2 rounded-full glass-card border-blue-500/20">
+            <div className="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]"></div>
+            <span className="text-muted-foreground font-medium">Remote Enthusiast</span>
           </div>
         </motion.div>
       </div>
