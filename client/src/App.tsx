@@ -1,4 +1,5 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, useLocation } from "wouter";
+import { AnimatePresence, motion } from "framer-motion";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -18,7 +19,20 @@ const About = lazy(() => import("@/pages/About"));
 const Contact = lazy(() => import("@/pages/Contact"));
 const NotFound = lazy(() => import("@/pages/not-found"));
 
+const PageTransition = ({ children }: { children: React.ReactNode }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 10 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -10 }}
+    transition={{ duration: 0.3, ease: "easeInOut" }}
+  >
+    {children}
+  </motion.div>
+);
+
 function Router() {
+  const [location] = useLocation();
+
   return (
     <Suspense
       fallback={
@@ -27,14 +41,18 @@ function Router() {
         </div>
       }
     >
-      <Switch>
-        <Route path="/" component={Home} />
-        <Route path="/projects" component={Projects} />
-        <Route path="/project/:id" component={ProjectDetail} />
-        <Route path="/about" component={About} />
-        <Route path="/contact" component={Contact} />
-        <Route component={NotFound} />
-      </Switch>
+      <AnimatePresence mode="wait">
+        <Switch key={location}>
+          <Route path="/" component={() => <PageTransition><Home /></PageTransition>} />
+          <Route path="/projects" component={() => <PageTransition><Projects /></PageTransition>} />
+          <Route path="/project/:id">
+            {() => <PageTransition><ProjectDetail /></PageTransition>}
+          </Route>
+          <Route path="/about" component={() => <PageTransition><About /></PageTransition>} />
+          <Route path="/contact" component={() => <PageTransition><Contact /></PageTransition>} />
+          <Route component={() => <PageTransition><NotFound /></PageTransition>} />
+        </Switch>
+      </AnimatePresence>
     </Suspense>
   );
 }

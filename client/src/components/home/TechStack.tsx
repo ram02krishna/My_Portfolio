@@ -7,7 +7,7 @@ const technologies = [
 
 export default function TechStack() {
   return (
-    <section className="py-20 md:py-24 overflow-hidden bg-background relative">
+    <section className="py-16 md:py-20 overflow-hidden bg-background relative">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808005_1px,transparent_1px),linear-gradient(to_bottom,#80808005_1px,transparent_1px)] bg-[size:60px_60px]" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />

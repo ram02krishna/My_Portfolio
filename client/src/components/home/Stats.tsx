@@ -2,12 +2,13 @@ import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
 import { Code2, FolderGit2, Award, Coffee } from 'lucide-react';
+import SpotlightCard from '@/components/ui/SpotlightCard';
 
 const stats = [
-  { label: 'Skills Mastered', value: 8, suffix: '+', icon: Code2, color: 'from-blue-500 to-cyan-500' },
-  { label: 'Projects Completed', value: 4, suffix: '+', icon: FolderGit2, color: 'from-purple-500 to-pink-500' },
-  { label: 'Certifications Earned', value: 1, suffix: '+', icon: Award, color: 'from-orange-500 to-red-500' },
-  { label: 'Cups of Coffee', value: 125, suffix: '+', icon: Coffee, color: 'from-green-500 to-emerald-500' },
+  { label: 'Skills Mastered', value: 8, suffix: '+', icon: Code2, colorClass: 'text-blue-500', borderClass: 'border-blue-500' },
+  { label: 'Projects Completed', value: 4, suffix: '+', icon: FolderGit2, colorClass: 'text-purple-500', borderClass: 'border-purple-500' },
+  { label: 'Certifications Earned', value: 1, suffix: '+', icon: Award, colorClass: 'text-orange-500', borderClass: 'border-orange-500' },
+  { label: 'Cups of Coffee', value: 125, suffix: '+', icon: Coffee, colorClass: 'text-green-500', borderClass: 'border-green-500' },
 ];
 
 export default function Stats() {
@@ -31,28 +32,31 @@ export default function Stats() {
               transition={{ delay: index * 0.1, duration: 0.5 }}
               className="group relative"
             >
-              <div className="glass-card rounded-2xl p-6 md:p-8 text-center hover:scale-105 transition-all duration-300 relative overflow-hidden">
-                {/* Gradient background on hover */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
+              <SpotlightCard className="h-full group p-8 text-center hover:-translate-y-2 hover:border-primary/40 rounded-[24px] shadow-sm hover:shadow-xl transition-all duration-500">
+                {/* Animated gradient background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-purple-500/5 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
-                {/* Icon */}
-                <div className="flex justify-center mb-3">
-                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${stat.color} p-0.5 group-hover:scale-110 transition-transform duration-300`}>
-                    <div className="w-full h-full bg-card rounded-xl flex items-center justify-center">
-                      <stat.icon className="h-6 w-6 text-primary" />
+                {/* Corner accent */}
+                <div className="absolute -top-10 -right-10 w-24 h-24 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-all duration-700 pointer-events-none" />
+
+                <div className="relative z-10">
+                  {/* Icon */}
+                  <div className="flex justify-center mb-5">
+                    <div className={`w-14 h-14 rounded-full border-2 ${stat.borderClass} ${stat.colorClass} flex items-center justify-center bg-background/50 group-hover:scale-110 transition-transform duration-500`}>
+                      <stat.icon className="h-6 w-6 stroke-[2]" />
                     </div>
                   </div>
-                </div>
 
-                <h3 className="text-3xl md:text-5xl font-heading font-bold text-primary mb-2 relative z-10">
-                  {inView ? (
-                    <CountUp end={stat.value} duration={2.5} suffix={stat.suffix} />
-                  ) : (
-                    <span>0{stat.suffix}</span>
-                  )}
-                </h3>
-                <p className="text-muted-foreground font-medium text-sm md:text-base relative z-10">{stat.label}</p>
-              </div>
+                  <h3 className="text-4xl md:text-5xl font-heading font-extrabold text-primary mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-purple-500 transition-all duration-300">
+                    {inView ? (
+                      <CountUp end={stat.value} duration={2.5} suffix={stat.suffix} />
+                    ) : (
+                      <span>0{stat.suffix}</span>
+                    )}
+                  </h3>
+                  <p className="text-muted-foreground font-medium text-sm group-hover:text-foreground/80 transition-colors duration-300">{stat.label}</p>
+                </div>
+              </SpotlightCard>
             </motion.div>
           ))}
         </div>

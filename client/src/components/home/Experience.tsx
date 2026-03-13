@@ -1,28 +1,15 @@
 import { motion } from "framer-motion";
 import { experiences } from "@/lib/data";
+import SectionHeader from "@/components/ui/SectionHeader";
 
 export default function Experience() {
   return (
-    <section className="py-16 md:py-24 container mx-auto px-6">
-      <div className="text-center mb-16">
-        <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-3xl md:text-5xl font-heading font-bold mb-4"
-        >
-          Career Journey
-        </motion.h2>
-        <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-          className="text-muted-foreground max-w-2xl mx-auto text-lg"
-        >
-          My path in the tech industry and professional milestones.
-        </motion.p>
-      </div>
+    <section className="py-16 md:py-20 container mx-auto px-6">
+      <SectionHeader
+        badge="Experience"
+        title="Career"
+        highlight="Journey"
+      />
 
       <div className="max-w-3xl mx-auto">
         {experiences.map((exp, index) => (

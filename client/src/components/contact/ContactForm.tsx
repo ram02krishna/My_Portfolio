@@ -54,16 +54,22 @@ export default function ContactForm() {
       <AnimatePresence>
         {isSuccess && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            className="absolute inset-0 flex flex-col items-center justify-center bg-card rounded-3xl z-10"
+            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: -20 }}
+            transition={{ type: "spring", damping: 20, stiffness: 100 }}
+            className="absolute inset-0 flex flex-col items-center justify-center bg-card/95 backdrop-blur-md rounded-[22px] z-10 border border-green-500/20"
           >
-            <div className="w-20 h-20 rounded-full bg-green-500/10 flex items-center justify-center mb-6">
-              <CheckCircle className="h-10 w-10 text-green-500" />
-            </div>
-            <h3 className="text-2xl font-bold mb-2">Message Sent!</h3>
-            <p className="text-muted-foreground text-center max-w-sm">
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.2, type: "spring", damping: 15 }}
+              className="w-24 h-24 rounded-full bg-gradient-to-br from-green-500/20 to-emerald-500/10 flex items-center justify-center mb-6 shadow-lg shadow-green-500/10 border border-green-500/20"
+            >
+              <CheckCircle className="h-12 w-12 text-green-500 drop-shadow-md" />
+            </motion.div>
+            <h3 className="text-3xl font-bold mb-3 font-heading text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600">Message Sent!</h3>
+            <p className="text-muted-foreground text-center max-w-sm leading-relaxed">
               Thanks for reaching out. I'll get back to you as soon as possible.
             </p>
           </motion.div>
@@ -84,7 +90,7 @@ export default function ContactForm() {
                     <Input
                       placeholder="Enter Full Name"
                       {...field}
-                      className="h-12 bg-background/80 border-border/50 focus:border-primary rounded-xl"
+                      className="h-14 bg-background/50 backdrop-blur-sm border-border/40 focus:border-primary/60 focus:bg-background/80 hover:border-primary/30 transition-all rounded-xl shadow-sm"
                     />
                   </FormControl>
                   <FormMessage />
@@ -101,7 +107,7 @@ export default function ContactForm() {
                     <Input
                       placeholder="email@example.com"
                       {...field}
-                      className="h-12 bg-background/80 border-border/50 focus:border-primary rounded-xl"
+                      className="h-14 bg-background/50 backdrop-blur-sm border-border/40 focus:border-primary/60 focus:bg-background/80 hover:border-primary/30 transition-all rounded-xl shadow-sm"
                     />
                   </FormControl>
                   <FormMessage />
@@ -120,7 +126,7 @@ export default function ContactForm() {
                   <Input
                     placeholder="Job Opportunity / Recruitment Inquiry"
                     {...field}
-                    className="h-12 bg-background/80 border-border/50 focus:border-primary rounded-xl"
+                    className="h-14 bg-background/50 backdrop-blur-sm border-border/40 focus:border-primary/60 focus:bg-background/80 hover:border-primary/30 transition-all rounded-xl shadow-sm"
                   />
                 </FormControl>
                 <FormMessage />
@@ -137,7 +143,7 @@ export default function ContactForm() {
                 <FormControl>
                   <Textarea
                     placeholder="Please share the details of the job opportunity..."
-                    className="min-h-[100px] bg-background/80 border-border/50 focus:border-primary rounded-xl resize-none"
+                    className="min-h-[140px] bg-background/50 backdrop-blur-sm border-border/40 focus:border-primary/60 focus:bg-background/80 hover:border-primary/30 transition-all rounded-xl resize-none shadow-sm py-4"
                     {...field}
                   />
                 </FormControl>
@@ -149,7 +155,7 @@ export default function ContactForm() {
           <Button
             type="submit"
             size="lg"
-            className="w-full h-10 rounded-xl text-base shadow-lg shadow-primary/20"
+            className="w-full text-base shadow-xl shadow-primary/20 group hover:shadow-primary/40 mt-4 h-14"
             disabled={isSubmitting}
           >
             {isSubmitting ? (

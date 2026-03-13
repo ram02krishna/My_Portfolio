@@ -132,31 +132,82 @@ export const skillCategories = [
   {
     title: "Frontend",
     skills: [
-      { name: "HTML5 / CSS3", level: 95 },
-      { name: "React / Next.js", level: 95 },
-      { name: "JavaScript / TypeScript", level: 85 },
-      { name: "Tailwind CSS", level: 85 },
+      "HTML5 / CSS3",
+      "JavaScript / TypeScript",
+      "React / Next.js",
+      "Tailwind CSS",
+      "Redux / Zustand",
+      "Framer Motion",
     ],
   },
   {
     title: "Backend",
     skills: [
-      { name: "Node.js", level: 85 },
-      { name: "Express.js", level: 85 },
-      { name: "Drizzle ORM", level: 75 },
-      { name: "Supabase", level: 65 },
-      { name: "PostgreSQL", level: 75 },
-      { name: "MongoDB", level: 85 },
+      "Node.js",
+      "Express.js",
+      "REST APIs",
+      "Authentication (JWT, OAuth)",
+      "Drizzle ORM",
+      "Supabase",
+    ],
+  },
+  {
+    title: "Databases",
+    skills: [
+      "PostgreSQL",
+      "MongoDB",
+    ],
+  },
+  {
+    title: "Problem Solving",
+    skills: [
+      "C++",
+      "Data Structures",
+      "Algorithms",
+      "STL",
+      "Sliding Window",
+      "Graph Algorithms",
+      "Dynamic Programming",
     ],
   },
   {
     title: "Tools & DevOps",
     skills: [
-      { name: "Git Version Control", level: 80 },
-      { name: "Docker", level: 45 },
-      { name: "Linux Fundamentals", level: 65 },
-      { name: "VS Code", level: 90 },
+      "Git & GitHub",
+      "Docker",
+      "Linux Fundamentals",
+      "Postman",
+      "VS Code",
+      "Vercel",
     ],
+  },
+  {
+    title: "Computer Science",
+    skills: [
+      "Operating Systems",
+      "Computer Networks",
+      "DBMS",
+      "OOP",
+    ],
+  },
+];
+
+export const codingProfiles = [
+  {
+    title: "LeetCode",
+    link: "https://leetcode.com/u/Ram_Krishna_02/"
+  },
+  {
+    title: "Codeforces",
+    link: "https://codeforces.com/profile/Ram_Krishna_02"
+  },
+  {
+    title: "GitHub",
+    link: "https://github.com/ByteOps02"
+  },
+  {
+    title: "CodeChef",
+    link: "https://www.codechef.com/users/ram_krishna_02"
   },
 ];
 

@@ -1,41 +1,44 @@
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { Button } from '@/components/ui/button';
-import { Download, Github, Linkedin, Twitter, Heart, Zap, Users, Target } from 'lucide-react';
-import { skillCategories, experiences } from '@/lib/data';
+import { Download, Github, Linkedin, Twitter, Heart, Zap, Users, Target, Mail, Terminal, Code2 } from 'lucide-react';
+import { skillCategories, experiences, codingProfiles } from '@/lib/data';
 import { motion } from 'framer-motion';
 import Services from '@/components/home/Services';
 import { Badge } from '@/components/ui/badge';
-
-function SkillCard({ title, skills }: { title: string; skills: { name: string; level: number }[] }) {
+import { CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import SpotlightCard from '@/components/ui/SpotlightCard';
+import CodeSnippet from '@/components/ui/CodeSnippet';
+import SectionHeader from '@/components/ui/SectionHeader';
+function SkillCard({ title, skills }: { title: string; skills: string[] }) {
   return (
-    <motion.div
-      className="bg-card/50 backdrop-blur-sm border border-border rounded-2xl p-6 hover:border-primary/30 transition-colors duration-300"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-    >
-      <h3 className="text-xl font-bold mb-6 text-primary">{title}</h3>
-      <div className="space-y-4">
-        {skills.map((skill, index) => (
-          <div key={index} className="group">
-            <div className="flex justify-between items-center mb-1.5">
-              <span className="font-medium text-sm group-hover:text-foreground transition-colors text-muted-foreground">{skill.name}</span>
-              <span className="text-xs text-muted-foreground">{skill.level}%</span>
-            </div>
-            <div className="h-2 bg-secondary/50 rounded-full overflow-hidden">
-              <motion.div
-                className="h-full bg-gradient-to-r from-primary/80 to-primary rounded-full"
-                initial={{ width: 0 }}
-                whileInView={{ width: `${skill.level}%` }}
-                viewport={{ once: true }}
-                transition={{ duration: 1, ease: "easeOut", delay: index * 0.1 }}
-              />
-            </div>
-          </div>
-        ))}
+    <SpotlightCard className="h-full group hover:-translate-y-2 hover:border-primary/40 rounded-3xl transition-all duration-500 shadow-xl overflow-hidden p-6 md:p-8">
+      {/* Animated gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-purple-500/5 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+
+      {/* Corner accent */}
+      <div className="absolute -top-10 -right-10 w-24 h-24 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-all duration-700 pointer-events-none" />
+
+      <div className="relative z-10">
+        <h3 className="text-xl md:text-2xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 font-heading tracking-tight mb-6">
+          {title}
+        </h3>
+        <div className="flex flex-wrap gap-2.5">
+          {skills.map((skill, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.05 }}
+              className="px-3 py-1.5 rounded-lg bg-secondary/40 border border-border/50 text-foreground text-sm font-medium hover:bg-primary/20 hover:text-primary hover:border-primary/50 hover:shadow-[0_0_15px_rgba(var(--primary),0.3)] transition-all duration-300 cursor-default hover:-translate-y-0.5"
+            >
+              {skill}
+            </motion.div>
+          ))}
+        </div>
       </div>
-    </motion.div>
+    </SpotlightCard>
   );
 }
 
@@ -51,8 +54,8 @@ export default function About() {
     <div className="min-h-screen bg-background overflow-x-hidden">
       <Navbar />
 
-      <main className="pt-24 md:pt-32 container mx-auto px-6">
-        <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20 md:mb-28">
+      <main className="pt-16 md:pt-20 container mx-auto px-6">
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16 md:mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -78,12 +81,13 @@ export default function About() {
             transition={{ duration: 0.4, delay: 0.1 }}
             className="order-1 lg:order-2"
           >
-            <Badge variant="secondary" className="mb-4 px-3 py-1 text-xs uppercase tracking-widest font-semibold text-primary bg-primary/10 hover:bg-primary/20 border-transparent">
-              About Me
-            </Badge>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
-              More than just <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-500">Code.</span>
-            </h1>
+            <SectionHeader
+              align="left"
+              badge="About Me"
+              title="More than just"
+              highlight="Code."
+              className="mb-6"
+            />
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
               <p>
                 I'm a passionate <strong className="text-foreground font-semibold">Full Stack Developer</strong> with a knack for building robust and scalable web applications.
@@ -102,73 +106,45 @@ export default function About() {
               </a>
               <div className="flex gap-3">
                 {[
-                  { icon: Github, href: "https://github.com/ByteOps02" },
-                  { icon: Linkedin, href: "https://www.linkedin.com/in/ram-krishna-419528287/" },
-                  { icon: Twitter, href: "https://x.com/krishnarammhd" }
+                  { icon: Github, href: "https://github.com/ram02krishna", label: "GitHub" },
+                  { icon: Linkedin, href: "https://www.linkedin.com/in/ram-krishna-419528287/", label: "LinkedIn" },
+                  { icon: Twitter, href: "https://x.com/krishnarammhd", label: "Twitter" },
+                  { icon: Mail, href: "mailto:krishnarammhd@gmail.com", label: "Email" }
                 ].map((social, i) => (
-                  <a key={i} href={social.href} target="_blank" rel="noopener noreferrer">
-                    <Button size="lg" variant="outline" className="rounded-full h-12 w-12 p-0 border-border hover:border-primary hover:bg-primary/5 hover:text-primary transition-all duration-300">
-                      <social.icon className="h-5 w-5" />
-                    </Button>
-                  </a>
+                  <motion.a
+                    key={i}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 rounded-full bg-secondary/30 backdrop-blur-sm border border-white/5 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors group shadow-lg"
+                    aria-label={social.label}
+                    animate={{ y: [0, -6, 0] }}
+                    transition={{
+                      repeat: Infinity,
+                      duration: 3,
+                      ease: "easeInOut",
+                      delay: i * 0.2
+                    }}
+                    whileHover={{ scale: 1.1, y: -10 }}
+                  >
+                    <social.icon className="h-5 w-5" />
+                  </motion.a>
                 ))}
               </div>
             </div>
           </motion.div>
         </section>
 
-        <section className="mb-24 md:mb-32 relative">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-full bg-primary/5 blur-[100px] -z-10 rounded-full" />
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <Badge variant="outline" className="mb-4 border-primary/30 text-primary">Values</Badge>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-4">What Drives Me</h2>
-            <p className="text-muted-foreground max-w-xl mx-auto text-lg">The core principles that guide my work, code, and collaboration.</p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {values.map((value, index) => (
-              <motion.div
-                key={value.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="p-8 rounded-2xl bg-card/50 backdrop-blur-sm border border-border hover:border-primary/30 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/10 group relative overflow-hidden"
-              >
-                {/* Animated gradient background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                <motion.div
-                  className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/20 to-purple-500/20 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform duration-300 relative z-10"
-                  whileHover={{ rotate: [0, -10, 10, -10, 0] }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <value.icon className="h-7 w-7" />
-                </motion.div>
-                <h3 className="font-bold text-xl mb-3 group-hover:text-primary transition-colors duration-300 relative z-10">{value.title}</h3>
-                <p className="text-muted-foreground leading-relaxed relative z-10">{value.description}</p>
-              </motion.div>
-            ))}
-          </div>
+        <section className="mb-16 md:mb-20 w-full max-w-4xl mx-auto px-4 z-10 relative">
+          <CodeSnippet />
         </section>
 
-        <section className="mb-24 md:mb-32">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <Badge variant="outline" className="mb-4 border-primary/30 text-primary">Expertise</Badge>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-4">Technical Skills</h2>
-            <p className="text-muted-foreground max-w-xl mx-auto text-lg">The technologies and tools I leverage to build world-class applications.</p>
-          </motion.div>
+        <section className="mb-16 md:mb-20">
+          <SectionHeader
+            badge="Expertise"
+            title="Technical"
+            highlight="Skills."
+          />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {skillCategories.map((category, index) => (
@@ -177,25 +153,57 @@ export default function About() {
           </div>
         </section>
 
-        <section className="mb-24 md:mb-32">
-          <Services />
+        <section className="mb-16 md:mb-20">
+          <SectionHeader
+            badge="Profiles"
+            title="Coding"
+            highlight="Platforms."
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {codingProfiles.map((profile, index) => {
+              const ProfileIcon = profile.title === 'LeetCode' ? Code2 
+                               : profile.title === 'Codeforces' ? Terminal 
+                               : Github;
+              
+              return (
+                <motion.a
+                  key={profile.title}
+                  href={profile.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                >
+                  <SpotlightCard className="h-full group hover:-translate-y-2 hover:border-primary/40 rounded-3xl p-6 md:p-8 flex items-center gap-6">
+                    {/* Animated gradient background */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-purple-500/5 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+
+                    {/* Corner accent */}
+                    <div className="absolute -top-10 -right-10 w-24 h-24 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-all duration-700 pointer-events-none" />
+                    
+                    <div className="relative z-10 w-14 h-14 rounded-2xl bg-secondary/50 border border-white/5 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500 shadow-md">
+                      <ProfileIcon className="h-6 w-6" />
+                    </div>
+                    <div className="relative z-10">
+                      <h3 className="text-xl font-bold font-heading group-hover:text-primary transition-colors">{profile.title}</h3>
+                      <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors">View Profile &rarr;</p>
+                    </div>
+                  </SpotlightCard>
+                </motion.a>
+              );
+            })}
+          </div>
         </section>
 
-        <section className="mb-20 md:mb-24">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <Badge variant="outline" className="mb-4 border-primary/30 text-primary">Path</Badge>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-4">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-foreground via-primary to-purple-500">
-                Experiences
-              </span>
-              <span className="text-primary">.</span>
-            </h2>
-          </motion.div>
+        <section className="mb-16 md:mb-20">
+          <SectionHeader
+            badge="Path"
+            title="Career"
+            highlight="Experiences."
+          />
 
           <div className="max-w-3xl mx-auto">
             {experiences.map((exp, index) => (
@@ -212,6 +220,54 @@ export default function About() {
                 <h3 className="text-2xl font-bold mt-4 mb-1 group-hover:text-primary transition-colors">{exp.role}</h3>
                 <p className="text-lg text-foreground/80 font-medium mb-3">{exp.company}</p>
                 <p className="text-muted-foreground leading-relaxed">{exp.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-16 md:mb-20">
+          <Services />
+        </section>
+
+        <section className="mb-16 md:mb-20 relative">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-full bg-primary/5 blur-[100px] -z-10 rounded-full" />
+
+          <SectionHeader
+            badge="Values"
+            title="What Drives"
+            highlight="Me."
+          />
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {values.map((value, index) => (
+              <motion.div
+                key={value.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+              >
+                <SpotlightCard className="h-full group hover:-translate-y-4 hover:border-primary/40 rounded-3xl">
+                  {/* Animated gradient background */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-purple-500/5 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+
+                  {/* Corner accent */}
+                  <div className="absolute -top-10 -right-10 w-24 h-24 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-all duration-700" />
+
+                  <CardHeader className="relative z-10 p-8 pb-0">
+                    <motion.div
+                      className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/15 to-purple-500/15 flex items-center justify-center mb-6 text-primary group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-sm"
+                    >
+                      <value.icon className="h-8 w-8" />
+                    </motion.div>
+                    <CardTitle className="text-2xl font-bold group-hover:text-primary transition-colors duration-300 font-heading tracking-tight">{value.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="relative z-10 p-8 pt-4">
+                    <p className="text-muted-foreground leading-relaxed font-light group-hover:text-foreground/80 transition-colors duration-500">
+                      {value.description}
+                    </p>
+                  </CardContent>
+                </SpotlightCard>
               </motion.div>
             ))}
           </div>

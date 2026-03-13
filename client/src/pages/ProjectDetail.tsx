@@ -129,9 +129,15 @@ export default function ProjectDetail() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.3, staggerChildren: 0.1 }}
+            className="flex flex-col items-start"
           >
-            <div className="flex gap-3 mb-6">
+            <motion.div
+              className="flex gap-3 mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+            >
               <Badge className="bg-primary text-primary-foreground hover:bg-primary/90 px-5 py-1.5 text-sm rounded-full backdrop-blur-md shadow-lg">
                 {project.category}
               </Badge>
@@ -140,11 +146,23 @@ export default function ProjectDetail() {
                   Featured
                 </Badge>
               )}
-            </div>
-            <h1 className="text-4xl md:text-7xl lg:text-8xl font-heading font-bold mb-8 text-white tracking-tight drop-shadow-xl">
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              className="text-4xl md:text-7xl lg:text-8xl font-heading font-bold mb-8 text-white tracking-tight drop-shadow-xl"
+            >
               {project.title}
-            </h1>
-            <div className="flex flex-wrap gap-4">
+            </motion.h1>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="flex flex-wrap gap-4"
+            >
               <a href={project.link} target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="rounded-full shadow-xl shadow-primary/30 h-14 px-8">
                   View Live <ExternalLink className="ml-2 h-5 w-5" />
@@ -155,15 +173,15 @@ export default function ProjectDetail() {
                   Source Code <Github className="ml-2 h-5 w-5" />
                 </Button>
               </a>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>
 
-      <main className="container mx-auto px-6 py-24">
+      <main className="container mx-auto px-6 py-16 md:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
 
-          <div className="lg:col-span-8 space-y-20">
+          <div className="lg:col-span-8 space-y-12 md:space-y-16">
             <motion.section
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

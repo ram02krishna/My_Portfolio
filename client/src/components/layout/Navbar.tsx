@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback, memo } from 'react';
 import { Link, useLocation } from 'wouter';
 import { Moon, Sun, Menu } from 'lucide-react';
 import { useTheme } from 'next-themes';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
@@ -43,16 +44,14 @@ function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 flex justify-center ${
-        scrolled ? 'pt-4' : 'pt-0'
-      }`}
-    >
-      <div 
-        className={`container mx-auto px-6 py-3 flex items-center justify-between transition-all duration-500 ${
-          scrolled 
-            ? 'max-w-4xl bg-background/60 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl shadow-primary/10' 
-            : 'max-w-full bg-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 flex justify-center ${scrolled ? 'pt-4' : 'pt-0'
         }`}
+    >
+      <div
+        className={`container mx-auto px-6 py-3 flex items-center justify-between transition-all duration-500 ${scrolled
+          ? 'max-w-4xl bg-background/60 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl shadow-primary/10'
+          : 'max-w-full bg-transparent'
+          }`}
       >
         <Link href="/" className="text-xl md:text-2xl font-heading font-bold tracking-tighter hover:opacity-80 transition-opacity">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-foreground via-primary to-purple-500">
@@ -66,11 +65,18 @@ function Navbar() {
             <Link
               key={link.name}
               href={link.href}
-              className={`text-sm font-medium transition-colors hover:text-primary relative group ${location === link.href ? 'text-primary' : 'text-muted-foreground'
+              className={`text-sm font-medium transition-colors hover:text-primary relative group px-3 py-1.5 rounded-full ${location === link.href ? 'text-primary' : 'text-muted-foreground'
                 }`}
             >
-              {link.name}
-              <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ${location === link.href ? 'w-full' : 'w-0 group-hover:w-full'}`} />
+              <span className="relative z-10">{link.name}</span>
+              {location === link.href && (
+                <motion.div
+                  layoutId="navbar-indicator"
+                  className="absolute inset-0 bg-primary/10 rounded-full"
+                  initial={false}
+                  transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                />
+              )}
             </Link>
           ))}
 

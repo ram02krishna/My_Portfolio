@@ -14,6 +14,7 @@ import { ArrowRight } from 'lucide-react';
 import { Link } from 'wouter';
 import ScrollProgress from '@/components/ui/ScrollProgress';
 import { motion } from 'framer-motion';
+import SectionHeader from '@/components/ui/SectionHeader';
 
 export default function Home() {
   const featuredProjects = getFeaturedProjects();
@@ -34,7 +35,7 @@ export default function Home() {
 
         <Stats />
 
-        <section className="py-20 md:py-32 container mx-auto px-6 relative">
+        <section className="py-16 md:py-20 container mx-auto px-6 relative">
           {/* Background Decoration */}
           <div className="absolute inset-0 -z-10 overflow-hidden">
             <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
@@ -42,24 +43,20 @@ export default function Home() {
           </div>
 
           <motion.div
-            className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-16"
+            className="flex flex-col flex-wrap md:flex-row justify-between items-start md:items-end gap-6 mb-16 relative z-10"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
           >
-            <div>
-              <span className="text-primary font-semibold mb-4 block text-sm uppercase tracking-widest">Portfolio</span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-4">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-foreground via-primary to-purple-500">
-                  Featured
-                </span>{" "}
-                <span className="text-foreground">Works</span>
-                <span className="text-primary">.</span>
-              </h2>
-              <p className="text-muted-foreground max-w-2xl text-base md:text-lg leading-relaxed">
-                A curated selection of my most impactful projects showcasing expertise in modern web development and innovative solutions.
-              </p>
+            <div className="w-full md:w-auto mt-6">
+              <SectionHeader 
+                align="left"
+                badge="Portfolio"
+                title="Featured"
+                highlight="Works."
+                className="mb-0"
+              />
             </div>
             <Link href="/projects">
               <Button variant="outline" className="hidden md:flex group rounded-full px-6 hover:bg-primary hover:text-primary-foreground transition-all">
