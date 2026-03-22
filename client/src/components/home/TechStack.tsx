@@ -33,7 +33,7 @@ export default function TechStack() {
               key={index}
               className="mx-12 flex items-center gap-4 group/item"
             >
-              <span className="text-4xl md:text-7xl font-heading font-black text-muted-foreground/10 group-hover/item:text-primary transition-all duration-500 cursor-default select-none transform group-hover/item:scale-110 group-hover/item:-rotate-2">
+              <span className="text-4xl md:text-7xl font-heading font-black text-transparent bg-clip-text bg-gradient-to-r from-foreground via-primary to-purple-500 transition-all duration-500 cursor-default select-none transform group-hover/item:scale-110 group-hover/item:-rotate-2">
                 {tech}
               </span>
               <div className="w-2 h-2 rounded-full bg-primary/20 group-hover/item:bg-primary transition-colors duration-500" />
@@ -46,7 +46,7 @@ export default function TechStack() {
               key={`duplicate-${index}`}
               className="mx-12 flex items-center gap-4 group/item"
             >
-              <span className="text-4xl md:text-7xl font-heading font-black text-muted-foreground/10 group-hover/item:text-primary transition-all duration-500 cursor-default select-none transform group-hover/item:scale-110 group-hover/item:-rotate-2">
+              <span className="text-4xl md:text-7xl font-heading font-black text-transparent bg-clip-text bg-gradient-to-r from-foreground via-primary to-purple-500 transition-all duration-500 cursor-default select-none transform group-hover/item:scale-110 group-hover/item:-rotate-2">
                 {tech}
               </span>
               <div className="w-2 h-2 rounded-full bg-primary/20 group-hover/item:bg-primary transition-colors duration-500" />

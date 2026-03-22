@@ -49,11 +49,14 @@ export default function SectionHeader({
         {badge}
       </Badge>
 
-      <h2 className={cn("text-4xl sm:text-5xl md:text-6xl font-heading font-extrabold tracking-tight relative z-10 mb-4", align === 'center' && 'text-center')}>
+      <div className="absolute inset-0 flex justify-center -translate-y-6 z-0 pointer-events-none">
+        <div className="w-1/2 h-28 bg-gradient-to-r from-foreground/8 via-primary/12 to-purple-500/10 blur-3xl rounded-full" />
+      </div>
+
+      <h2 className={cn("text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-extrabold tracking-tight relative z-10 mb-4", align === 'center' && 'text-center')}>
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-foreground via-primary to-purple-500 pb-2">
-          {title}{highlight ? ` ${highlight.replace(/\.$/, '')}` : ''}
+          {title}{highlight ? ` ${highlight.replace(/\.$/, '')}.` : ''}
         </span>
-        <span className="text-primary">.</span>
       </h2>
     </motion.div>
   );
