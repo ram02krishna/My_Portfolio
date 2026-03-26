@@ -7,7 +7,7 @@ import GradientOrb from '@/components/ui/GradientOrb';
 
 const navLinks = ['Projects', 'About', 'Contact'];
 const socialLinks = [
-  { icon: Github, href: "https://github.com/ByteOps02", label: "GitHub" },
+  { icon: Github, href: "https://github.com/ram02krishna", label: "GitHub" },
   { icon: Linkedin, href: "https://www.linkedin.com/in/ram-krishna-419528287/", label: "LinkedIn" },
   { icon: Twitter, href: "https://x.com/krishnarammhd", label: "Twitter" },
   { icon: Mail, href: "mailto:krishnarammhd@gmail.com", label: "Email" },

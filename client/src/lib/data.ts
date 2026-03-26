@@ -51,9 +51,7 @@ export const projects: Project[] = [
     link: "https://expense-tracker-omega-wine.vercel.app/login",
     repo: "https://github.com/ByteOps02/Expense_Tracker",
     featured: true,
-    images: [
-      "/images/expense_tracker.png"
-    ],
+    images: ["/images/expense_tracker.png"],
   },
   {
     id: "visitor-management",
@@ -74,14 +72,12 @@ export const projects: Project[] = [
       "OAuth 2.0",
       "Postgres",
       "QR Code",
-      "EmailJs"
+      "EmailJs",
     ],
     link: "https://visitor-management-system-xi.vercel.app/",
     repo: "https://github.com/ByteOps02/DBMS_Project",
     featured: true,
-    images: [
-      "/images/VMS.png"
-    ],
+    images: ["/images/VMS.png"],
   },
   {
     id: "snufi-pharma",
@@ -92,13 +88,17 @@ export const projects: Project[] = [
     fullDescription:
       "Snufi Pharma required a world-class digital presence that reflects their commitment to healthcare excellence. The website features a sophisticated design with smooth animations and micro-interactions that enhance user engagement. The product catalog showcases their pharmaceutical offerings with detailed information and elegant presentation. The research section highlights ongoing clinical trials and scientific publications. Built with accessibility in mind, the site achieves WCAG 2.1 AA compliance. The responsive design ensures perfect presentation across all devices, from mobile phones to large desktop displays. Performance optimization techniques ensure lightning-fast page loads, critical for user engagement and SEO.",
     image: "/images/snufi_pharma_website.png",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "SEO"],
+    technologies: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "SEO",
+    ],
     link: "https://snufi-pharma.vercel.app/",
     repo: "https://github.com/ByteOps02/Snufi_Pharma",
     featured: true,
-    images: [
-      "/images/snufi_pharma.png"
-    ],
+    images: ["/images/snufi_pharma.png"],
   },
   {
     id: "shortify",
@@ -117,14 +117,12 @@ export const projects: Project[] = [
       "Express.js",
       "MongoDB",
       "Redis",
-      "JWT Authentication"
+      "JWT Authentication",
     ],
     link: "https://url-shortener-lac-five.vercel.app",
     repo: "https://github.com/ByteOps02/URL_Shortener",
     featured: true,
-    images: [
-      "/images/Shortify.png"
-    ],
+    images: ["/images/Shortify.png"],
   },
 ];
 
@@ -153,10 +151,7 @@ export const skillCategories = [
   },
   {
     title: "Databases",
-    skills: [
-      "PostgreSQL",
-      "MongoDB",
-    ],
+    skills: ["PostgreSQL", "MongoDB"],
   },
   {
     title: "Problem Solving",
@@ -183,31 +178,26 @@ export const skillCategories = [
   },
   {
     title: "Computer Science",
-    skills: [
-      "Operating Systems",
-      "Computer Networks",
-      "DBMS",
-      "OOP",
-    ],
+    skills: ["Operating Systems", "Computer Networks", "DBMS", "OOP"],
   },
 ];
 
 export const codingProfiles = [
   {
-    title: "LeetCode",
-    link: "https://leetcode.com/u/Ram_Krishna_02/"
-  },
-  {
     title: "Codeforces",
-    link: "https://codeforces.com/profile/Ram_Krishna_02"
+    link: "https://codeforces.com/profile/krishnarammhd",
   },
   {
-    title: "GitHub",
-    link: "https://github.com/ByteOps02"
+    title: "LeetCode",
+    link: "https://leetcode.com/u/ram_02_Krishna/",
   },
   {
     title: "CodeChef",
-    link: "https://www.codechef.com/users/ram_krishna_02"
+    link: "https://www.codechef.com/users/ram_krishna_02",
+  },
+  {
+    title: "GitHub",
+    link: "https://github.com/ram02krishna",
   },
 ];
 
