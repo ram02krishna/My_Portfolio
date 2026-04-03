@@ -31,11 +31,11 @@ export default function HomeContact() {
                   Get in Touch
                 </span>
                 <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6 leading-tight">
-                  Have a <span className="text-gradient">Vision?</span> <br />
-                  Let's Make it <span className="text-primary italic">Real</span>.
+                  Got something <span className="text-gradient">interesting?</span> <br />
+                  Let's <span className="text-primary italic">build it</span>.
                 </h2>
                 <p className="text-muted-foreground text-lg mb-10 max-w-md leading-relaxed">
-                  Currently available for new projects and collaborations. If you have an idea, let's discuss how we can bring it to life together.
+                  I'm actively looking for opportunities — whether that's a full-time role, an internship, or a freelance project worth working on. If you think we'd be a good fit, reach out.
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -67,8 +67,8 @@ export default function HomeContact() {
                   <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
                     <Mail className="w-10 h-10 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-2">Drop me a line</h3>
-                  <p className="text-muted-foreground mb-6">I usually respond within 24 hours.</p>
+                  <h3 className="text-2xl font-bold mb-2">Send me a message</h3>
+                  <p className="text-muted-foreground mb-6">I check my email daily and usually reply within a day.</p>
                   <a 
                     href="mailto:krishnarammhd@gmail.com" 
                     className="text-xl font-medium text-primary hover:underline underline-offset-4 decoration-2"

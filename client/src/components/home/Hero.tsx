@@ -114,9 +114,9 @@ function Hero() {
             }}
           />
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-extrabold tracking-tight leading-[1] w-full flex flex-col items-center relative z-10">
-            <TextReveal text="Crafting Digital" className="justify-center" delay={0.1} />
+            <TextReveal text="Building Ideas Into" className="justify-center" delay={0.1} />
             <span className="relative">
-              <TextReveal text="Masterpieces" className="justify-center text-gradient py-2 px-4" delay={0.3} />
+              <TextReveal text="Digital Reality" className="justify-center text-gradient py-2 px-4" delay={0.3} />
               <motion.div
                 className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary via-purple-500 to-blue-500 rounded-full"
                 initial={{ scaleX: 0 }}
@@ -134,15 +134,15 @@ function Hero() {
           transition={{ duration: 0.6, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="text-lg md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed font-light"
         >
-          Transforming complex ideas into <TypewriterLoop
+          Turning ideas into <TypewriterLoop
             words={[
-              'elegant web solutions',
-              'robust backend systems',
-              'interactive user journeys',
-              'high-performance apps'
+              'clean, working software',
+              'full-stack web apps',
+              'fast, responsive UIs',
+              'real products people use'
             ]}
             className="font-semibold text-primary"
-          /> with precision and passion.
+          /> — one line at a time.
         </motion.p>
 
         {/* Buttons */}
@@ -189,17 +189,7 @@ function Hero() {
         >
           <div className="flex items-center gap-2 px-4 py-2 rounded-full glass-card border-green-500/20">
             <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse shadow-[0_0_10px_rgba(34,197,94,0.5)]"></div>
-            <span className="text-muted-foreground font-medium">Available for Hire</span>
-          </div>
-
-          <div className="flex items-center gap-2 px-4 py-2 rounded-full glass-card border-primary/20">
-            <div className="w-2 h-2 rounded-full bg-primary shadow-[0_0_10px_rgba(var(--primary),0.5)]"></div>
-            <span className="text-muted-foreground font-medium">Self-Taught Developer</span>
-          </div>
-
-          <div className="flex items-center gap-2 px-4 py-2 rounded-full glass-card border-blue-500/20">
-            <div className="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]"></div>
-            <span className="text-muted-foreground font-medium">Remote Enthusiast</span>
+            <span className="text-muted-foreground font-medium">Open to Opportunities</span>
           </div>
         </motion.div>
       </div>

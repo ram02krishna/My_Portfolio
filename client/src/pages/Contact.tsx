@@ -11,14 +11,14 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email Me",
-    description: "I'll get back to you within 24 hours.",
+    description: "I check my inbox daily and usually reply within 24 hours.",
     value: "krishnarammhd@gmail.com",
     href: "mailto:krishnarammhd@gmail.com"
   },
   {
     icon: Phone,
     title: "Call Me",
-    description: "Available for interviews.",
+    description: "Available for quick chats and interviews.",
     value: "+91 92440 88448",
     href: "tel:+919244088448"
   },
@@ -57,7 +57,7 @@ export default function Contact() {
             className="mb-6"
           />
           <p className="text-muted-foreground max-w-xl mx-auto text-base md:text-lg">
-            Looking for a dedicated developer to join your engineering team? I am actively seeking full-time opportunities with leading MNCs and innovative tech companies.
+            I'm currently open to full-time roles, internships, and freelance projects. Whether you have a question, a job opportunity, or just want to say hello — feel free to reach out.
           </p>
         </motion.div>
 
@@ -111,9 +111,9 @@ export default function Contact() {
             <SpotlightCard className="p-1 rounded-2xl">
               <div className="p-5 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 h-full pointer-events-none relative overflow-hidden">
                 <div className="absolute -top-10 -right-10 w-24 h-24 bg-primary/20 rounded-full blur-2xl" />
-                <h3 className="font-semibold mb-2 relative z-10">Prefer a quick chat?</h3>
+                <h3 className="font-semibold mb-2 relative z-10">Prefer a quick call?</h3>
                 <p className="text-muted-foreground text-sm mb-3 relative z-10">
-                  Let's connect to discuss how I can contribute to your team.
+                  Happy to jump on a call to discuss how I can be a good fit for your team.
                 </p>
                 <a
                   href="mailto:krishnarammhd@gmail.com?subject=Interview%20Call"

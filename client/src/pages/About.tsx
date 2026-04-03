@@ -43,10 +43,10 @@ function SkillCard({ title, skills }: { title: string; skills: string[] }) {
 }
 
 const values = [
-  { icon: Heart, title: "Passion-Driven", description: "I genuinely love what I do. Every project is an opportunity to create something meaningful." },
-  { icon: Zap, title: "Performance First", description: "Fast, efficient code isn't optional—it's the foundation of great user experience." },
-  { icon: Users, title: "Collaboration", description: "The best solutions come from open communication and teamwork." },
-  { icon: Target, title: "Attention to Detail", description: "The little things matter. Pixel-perfect designs and clean code are my standards." },
+  { icon: Heart, title: "Genuinely Curious", description: "I build things because I find it interesting, not just as a job. That curiosity is what pushes me to understand how things actually work, not just make them work." },
+  { icon: Zap, title: "Performance First", description: "A slow or clunky app is a broken app. I treat performance as a feature, not an afterthought — because the details users feel are just as important as the ones they see." },
+  { icon: Users, title: "Team-Oriented", description: "Good software is rarely built alone. I value honest communication, receptive to feedback, and always willing to pair on a problem rather than wrestle with it solo." },
+  { icon: Target, title: "Sweating the Details", description: "I notice the small things — spacing, transitions, error states, edge cases. That attention is what separates something that works from something that feels right." },
 ];
 
 export default function About() {
@@ -90,12 +90,12 @@ export default function About() {
             />
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
               <p>
-                I'm a passionate <strong className="text-foreground font-semibold">Full Stack Developer</strong> with a knack for building robust and scalable web applications.
-                With deep expertise in the modern JavaScript ecosystem, I transform complex requirements into elegant digital solutions.
+                I'm a passionate <strong className="text-foreground font-semibold">Full Stack Developer</strong> who got into programming by building things I actually wanted to exist.
+                What started as curiosity turned into a genuine craft — one I've spent the last couple of years refining through real projects across the full stack.
               </p>
               <p>
-                My philosophy centers on the intersection of <strong className="text-foreground font-semibold">design and functionality</strong>.
-                I believe that great software should not only run flawlessly but also provide an intuitive and delightful experience for every user.
+                I work primarily with <strong className="text-foreground font-semibold">React, TypeScript, and Node.js</strong>, and I care deeply about both the quality of the code and the quality of the experience it produces.
+                For me, a good product means clean architecture on the inside and something that genuinely feels good to use on the outside.
               </p>
             </div>
             <div className="flex flex-wrap gap-4 mt-10">

@@ -26,9 +26,9 @@ export const projects: Project[] = [
     title: "Expense Tracker",
     category: "Web App",
     description:
-      "A comprehensive personal finance management application for tracking income, expenses, and budgets with insightful analytics.",
+      "A personal finance app that makes budgeting actually enjoyable — track income, expenses, and spending patterns with clear, real-time visualizations.",
     fullDescription:
-      "The Expense Tracker is a full-featured financial management solution designed to help users take control of their finances. Built with a focus on user experience, it features an intuitive dashboard with real-time charts and graphs for visualizing spending patterns. Users can categorize transactions, set monthly budgets, and receive smart alerts when approaching spending limits. The application includes recurring transaction support, export functionality for tax preparation, and beautiful visualizations that make financial data easy to understand. The dark mode interface reduces eye strain while the responsive design ensures seamless access across all devices.",
+      "Expense Tracker is a full-stack financial management app built to help people take genuine control of their money. The dashboard gives users an at-a-glance view of their finances with interactive charts that highlight spending patterns over time. Transactions can be categorized and filtered, monthly budgets can be set with intelligent alerts when limits are near, and recurring expenses are handled automatically. The app supports exporting data as Excel sheets for tax season and displays everything through a clean dark-mode interface. Authentication is handled securely with JWT and bcrypt, while Cloudinary manages profile image uploads. The entire experience is fully responsive — it works just as well on a phone as it does on a desktop.",
     image: "/images/expense_tracker.png",
     technologies: [
       "Vite",
@@ -58,9 +58,9 @@ export const projects: Project[] = [
     title: "Visitor Management System",
     category: "Enterprise",
     description:
-      "A modern enterprise solution for managing visitor check-ins, badge printing, and real-time analytics for corporate offices.",
+      "An enterprise-grade visitor management platform that replaces paper logs with a streamlined digital check-in flow, real-time dashboards, and QR code scanning.",
     fullDescription:
-      "The Visitor Management System revolutionizes how organizations handle guest arrivals and security protocols. This comprehensive solution streamlines the check-in process with QR code scanning, digital signature capture, and instant badge printing. The system includes pre-registration capabilities allowing hosts to register expected visitors in advance. Real-time dashboards provide security teams with instant visibility into who is on-premises. Features include watchlist screening, emergency evacuation lists, visitor photo capture, and detailed analytics on visitor patterns. The system integrates seamlessly with existing access control systems and sends automatic notifications to hosts when their guests arrive.",
+      "Built as a college DBMS project, this Visitor Management System tackles a real problem — the chaos of paper-based visitor logs in corporate environments. Visitors can pre-register online before arrival, and on the day, a quick QR code scan handles the entire check-in process. Hosts receive automatic email notifications when their guest arrives, so no one is left waiting in reception. The security dashboard gives teams live visibility into who is currently on-premises, with support for emergency evacuation lists if needed. The system is powered by Supabase with a PostgreSQL backend and secured using OAuth 2.0, with a clean React + TypeScript frontend built on Vite.",
     image: "/images/visitor_management_system.png",
     technologies: [
       "Vite",
@@ -84,9 +84,9 @@ export const projects: Project[] = [
     title: "Snufi Pharma Website",
     category: "Corporate",
     description:
-      "A premium pharmaceutical company website showcasing products, research initiatives, and corporate information.",
+      "A polished corporate website for a pharmaceutical brand, built with smooth animations and a design language that communicates trust and professionalism.",
     fullDescription:
-      "Snufi Pharma required a world-class digital presence that reflects their commitment to healthcare excellence. The website features a sophisticated design with smooth animations and micro-interactions that enhance user engagement. The product catalog showcases their pharmaceutical offerings with detailed information and elegant presentation. The research section highlights ongoing clinical trials and scientific publications. Built with accessibility in mind, the site achieves WCAG 2.1 AA compliance. The responsive design ensures perfect presentation across all devices, from mobile phones to large desktop displays. Performance optimization techniques ensure lightning-fast page loads, critical for user engagement and SEO.",
+      "Snufi Pharma needed a digital presence that matched the credibility of their brand. The result is a sophisticated, fast-loading website with deliberate micro-interactions and scroll-triggered animations that keep users engaged without feeling gimmicky. The product catalog is cleanly laid out for easy browsing, and the research section surfaces key information about their clinical work in a digestible format. Accessibility was a priority throughout — the site adheres to WCAG 2.1 AA standards. Every detail was tuned for performance and SEO, and the layout adapts gracefully from mobile to large desktop screens. Built with React, TypeScript, Tailwind CSS, and Framer Motion.",
     image: "/images/snufi_pharma_website.png",
     technologies: [
       "React",
@@ -105,9 +105,9 @@ export const projects: Project[] = [
     title: "Shortify",
     category: "Web App",
     description:
-      "A modern URL shortener application that transforms long URLs into short, shareable links with custom aliases.",
+      "A clean, fast URL shortener that turns long links into custom short URLs — with spam filtering and a developer-friendly API in the pipeline.",
     fullDescription:
-      "Shortify is a powerful URL shortening service designed for both individuals and businesses. The application allows users to create short, memorable links from long URLs with optional custom aliases. The clean, intuitive interface makes link creation effortless while the responsive design ensures seamless access across all devices. Built with security in mind, it includes spam detection and malicious URL filtering. Coming soon: Real-time click tracking and analytics with comprehensive statistics including geographic data, device types, and referral sources, QR code generation for each shortened URL, and link expiration settings. The API will enable integration with other applications, making it perfect for social media sharing, marketing campaigns, and general link management.",
+      "Shortify started as a simple idea: make URL shortening feel effortless and actually pleasant to use. Users can paste any long URL and get a short link in seconds, optionally with a custom alias that's easy to remember and share. The backend is built with Node.js and Express, uses MongoDB for persistence, and Redis for caching to keep response times fast. Security was considered from the start — the system filters suspected spam and malicious URLs before shortening. Planned features include real-time click analytics (geographic breakdown, device types, referral sources), QR code generation per link, and expiration settings. A public API is also on the roadmap for third-party integrations.",
     image: "/images/shortify.png",
     technologies: [
       "React",
@@ -205,10 +205,10 @@ export const experiences: Experience[] = [
   {
     id: "1",
     year: "Present",
-    role: "Actively seeking opportunities",
-    company: "Web Development & SDE Roles (Internship/Job)",
+    role: "Open to SDE & Web Development Roles",
+    company: "Full Stack Development · Software Engineering",
     description:
-      "Passionate fresher actively seeking challenging roles in Web Development and Software Development Engineering. Eager to contribute to innovative projects and grow within a dynamic team environment.",
+      "I've spent the past year building real projects across the full stack — from authentication flows and REST APIs to responsive UIs and database design. Now I'm looking for a team where I can do meaningful work, grow alongside smart people, and ship things that actually matter.",
   },
 ];
 
@@ -224,27 +224,27 @@ import { Code2, Palette, Rocket, Smartphone } from "lucide-react";
 
 export const services = [
   {
-    title: "Frontend Architecture",
+    title: "Frontend Development",
     description:
-      "Building scalable, performant, and maintainable user interfaces using modern React patterns and state management.",
+      "Crafting responsive, accessible UIs with React and TypeScript. I care about component architecture, clean state management, and the kind of polish users notice even when they can't name it.",
     icon: Code2,
   },
   {
-    title: "DevOps",
+    title: "Backend & APIs",
     description:
-      "Proficient in Git version control for collaborative development, Docker for containerization, and Linux fundamentals for server management and deployment environments.",
+      "Building reliable REST APIs with Node.js and Express, handling authentication, database design, and the backend logic that keeps everything running smoothly under the hood.",
     icon: Palette,
   },
   {
-    title: "Performance Optimization",
+    title: "Performance & SEO",
     description:
-      "Auditing and improving application speed, Core Web Vitals, and SEO to ensure lightning-fast experiences.",
+      "Improving load times, Core Web Vitals, and search visibility. Fast pages aren't a luxury — they're the baseline for a product people actually want to use.",
     icon: Rocket,
   },
   {
-    title: "Web Development",
+    title: "Full Stack Projects",
     description:
-      "Building dynamic and responsive web applications with modern frameworks, ensuring a seamless user experience across all devices.",
+      "Taking ideas from concept to deployed product — handling the frontend, backend, database, and deployment pipeline as a single cohesive system rather than a collection of separate parts.",
     icon: Smartphone,
   },
 ];
