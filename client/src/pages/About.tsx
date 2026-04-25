@@ -64,7 +64,7 @@ export default function About() {
           >
             <div className="aspect-[4/5] max-w-md mx-auto lg:max-w-none rounded-2xl overflow-hidden border border-border shadow-xl relative z-10 group">
               <img
-                src="/images/professional_dev_avatar.jpeg"
+                src="/images/Linkedin_Profile.png"
                 alt="Developer Portrait"
                 loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -99,7 +99,7 @@ export default function About() {
               </p>
             </div>
             <div className="flex flex-wrap gap-4 mt-10">
-              <a href="/Internshala.pdf" download>
+              <a href="/Resume.pdf" download="Resume.pdf">
                 <Button size="lg" className="rounded-full h-12 px-8 text-base font-medium shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-0.5 transition-all duration-300">
                   <Download className="mr-2 h-4 w-4" /> Download Resume
                 </Button>
@@ -162,10 +162,10 @@ export default function About() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {codingProfiles.map((profile, index) => {
-              const ProfileIcon = profile.title === 'LeetCode' ? Code2 
-                               : profile.title === 'Codeforces' ? Terminal 
-                               : Github;
-              
+              const ProfileIcon = profile.title === 'LeetCode' ? Code2
+                : profile.title === 'Codeforces' ? Terminal
+                  : Github;
+
               return (
                 <motion.a
                   key={profile.title}
@@ -183,7 +183,7 @@ export default function About() {
 
                     {/* Corner accent */}
                     <div className="absolute -top-10 -right-10 w-24 h-24 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-all duration-700 pointer-events-none" />
-                    
+
                     <div className="relative z-10 w-14 h-14 rounded-2xl bg-secondary/50 border border-white/5 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500 shadow-md">
                       <ProfileIcon className="h-6 w-6" />
                     </div>
