@@ -11,9 +11,9 @@ export function About() {
           </h2>
         </div>
 
-        <div className="grid items-center gap-12 lg:grid-cols-2">
+        <div className="grid items-center gap-12 md:grid-cols-2">
           {/* Portrait card */}
-          <div className="reveal relative mx-auto w-full max-w-md lg:order-last">
+          <div className="reveal relative mx-auto w-full max-w-md md:order-last">
             <div
               className="absolute -inset-4 rounded-[2rem] opacity-40 blur-2xl"
               style={{ background: "var(--gradient-brand)" }}

@@ -69,7 +69,7 @@ export function Projects() {
             >
               <div className="mb-4 flex items-start justify-between">
                 <span className="font-mono text-xs text-muted-foreground">0{i + 1} · {p.tag}</span>
-                <div className="flex gap-2 opacity-0 transition-opacity group-hover:opacity-100">
+                <div className="flex gap-2 opacity-100 md:opacity-0 transition-opacity md:group-hover:opacity-100">
                   {p.github && (
                     <a href={p.github} aria-label="GitHub" className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary hover:bg-secondary/70">
                       <Github className="h-3.5 w-3.5" />
