@@ -1,0 +1,95 @@
+import { Github, Linkedin, Twitter, Mail, Code2 } from "lucide-react";
+
+const explore = [
+  { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
+  { label: "Platforms", href: "#platforms" },
+  { label: "Projects", href: "#projects" },
+  { label: "Experience", href: "#experience" },
+  { label: "Contact", href: "#contact" },
+];
+
+const socials = [
+  { icon: Github, href: "https://github.com/ram02krishna", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/ram-krishna-419528287/", label: "LinkedIn" },
+  { icon: Twitter, href: "https://x.com/krishnarammhd", label: "Twitter" },
+  { icon: Mail, href: "mailto:krishnarammhd@gmail.com", label: "Email" },
+];
+
+export function Footer() {
+  return (
+    <footer className="relative border-t border-border px-4 pb-8 pt-16">
+      {/* gradient top accent */}
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-px"
+        style={{ background: "linear-gradient(to right, transparent, var(--brand-violet), var(--brand-cyan), transparent)" }}
+      />
+
+      <div className="mx-auto max-w-6xl">
+        <div className="grid gap-12 md:grid-cols-3">
+          {/* Brand */}
+          <div>
+            <h3 className="flex items-center gap-2 font-display text-3xl font-bold">
+              <span className="flex h-8 w-8 items-center justify-center rounded-lg" style={{ background: "var(--gradient-brand)" }}>
+                <Code2 className="h-4 w-4 text-background" />
+              </span>
+              <span className="text-gradient">Ram.dev</span>
+            </h3>
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
+              Architecting resilient backends and crafting seamless full-stack experiences with a focus on engineering excellence and scalable code.
+            </p>
+            <div className="mt-6 flex items-center gap-2">
+              {socials.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  aria-label={s.label}
+                  className="wave-icon flex h-10 w-10 items-center justify-center rounded-full border border-border bg-secondary/50 text-foreground transition-colors hover:text-[color:var(--brand-violet)] hover:border-[color:var(--brand-violet)]/50"
+                >
+                  <s.icon className="h-4 w-4" />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Explore */}
+          <div className="md:col-span-1">
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-foreground">Explore</p>
+            <div className="mt-5 grid grid-cols-2 gap-x-4 gap-y-3 text-sm">
+              {explore.map((l) => (
+                <a
+                  key={l.label}
+                  href={l.href}
+                  className="group flex items-center text-muted-foreground transition-all hover:text-[color:var(--brand-cyan)]"
+                >
+                  <span className="mr-2 h-px w-0 bg-[color:var(--brand-cyan)] transition-all group-hover:w-3" />
+                  {l.label}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Stay in touch */}
+          <div>
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-foreground">Stay in touch</p>
+            <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+              Interested in working together or just want to say hi? My inbox is always open.
+            </p>
+            <a
+              href="#contact"
+              className="animate-gradient-flow mt-5 inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-background shadow-[var(--shadow-glow-violet)] transition-transform hover:-translate-y-0.5"
+              style={{ background: "var(--gradient-brand)" }}
+            >
+              Start a Conversation <Mail className="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+
+        <div className="mt-12 flex flex-col items-center justify-between gap-2 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row">
+          <p>© {new Date().getFullYear()} Ram Krishna. All rights reserved.</p>
+          <p className="font-mono">crafted in &lt;code/&gt; · deployed with ❤</p>
+        </div>
+      </div>
+    </footer>
+  );
+}

@@ -1,42 +1,50 @@
 # Ram Krishna | Full Stack Developer Portfolio
 
-Welcome to the source code for my personal developer portfolio. I built this to showcase my professional journey, full-stack projects, and technical skills in an immersive, high-performance web experience.
+Welcome to the source code for my personal developer portfolio. This project is a high-performance, immersive web experience built to showcase my professional journey, full-stack projects, and technical expertise.
 
 The live version can be viewed here: **[Will deploy later]**.
 
-## 🛠️ What's Under the Hood?
+## 🛠️ Technical Architecture
 
-I chose a modern technology stack to build a fast, beautiful, and responsive website:
+This portfolio is built using the latest modern web technologies, focusing on type safety, performance, and a "Dark Premium" aesthetic.
 
--   **Core:** React 19 & TypeScript, powered by Vite for a rapid development experience.
--   **Styling:** Custom Tailwind CSS with Shadcn UI for a clean, component-based "Dark Premium" design system.
--   **Animations:** Framer Motion handling complex parallax effects, scroll-triggered reveals, and fluid layout transitions.
--   **Navigation:** Wouter for simple, lightweight, and efficient client-side routing.
--   **Data Management:** TanStack Query for smart data fetching and caching.
--   **Forms:** React Hook Form combined with Zod for robust, type-safe validation.
--   **Deployment Strategy:** Vercel serverless functions and optimized static asset caching.
+- **Core Framework:** [React 19](https://react.dev/) & [TanStack Start](https://tanstack.com/start) for a full-stack, server-side rendered (SSR) experience.
+- **Routing:** [TanStack Router](https://tanstack.com/router) providing 100% type-safe routing across the application.
+- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/) – utilizing the latest engine for lightning-fast builds and modern CSS features.
+- **UI Components:** [Shadcn UI](https://ui.shadcn.com/) components customized for a sleek, premium dark theme.
+- **Data Management:** [TanStack Query](https://tanstack.com/query) for efficient data fetching, caching, and state management.
+- **Animations:** Custom scroll-triggered reveals using `IntersectionObserver` and CSS transitions for a fluid, performant feel.
+- **Icons:** [Lucide React](https://lucide.dev/) for a consistent and crisp icon set.
+- **Form Handling:** [React Hook Form](https://react-hook-form.com/) with [Zod](https://zod.dev/) for robust, type-safe validation.
 
-## 🚀 How to Run It Locally
+## 🚀 Getting Started
 
-If you'd like to run the project on your own machine, follow these steps:
+To run this project locally, ensure you have [Node.js](https://nodejs.org/) installed, then follow these steps:
 
-1.  **Clone the repo:**
-    ```bash
-    git clone https://github.com/ram02krishna/My_Portfolio.git
-    cd My_Portfolio
-    ```
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/ram02krishna/My_Portfolio.git
+   cd My_Portfolio
+   ```
 
-2.  **Install all the needed packages:**
-    ```bash
-    npm install
-    ```
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-3.  **Start the local development server:**
-    ```bash
-    npm run dev
-    ```
+3. **Launch the development server:**
+   ```bash
+   npm run dev
+   ```
 
-The site will be up and running at `http://localhost:5000`.
+The application will be available at `http://localhost:3000` (or the port specified in your terminal).
+
+## 📁 Project Structure
+
+- `src/routes/`: Contains the application pages and routes using TanStack Router's file-based routing.
+- `src/components/portfolio/`: Feature-specific components for the portfolio sections.
+- `src/components/ui/`: Reusable base UI components.
+- `src/lib/`: Utility functions and shared logic.
 
 ---
 
