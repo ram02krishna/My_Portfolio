@@ -1,21 +1,32 @@
 # Ram Krishna | Full Stack Developer Portfolio
 
-Welcome to the source code for my personal developer portfolio. This project is a high-performance, immersive web experience built to showcase my professional journey, full-stack projects, and technical expertise.
+Welcome to the source code of my personal portfolio — a high-performance, immersive web experience built to showcase my professional journey, full-stack projects, and technical expertise.
 
-The live version can be viewed here: **[Will deploy later]**.
+The project features a **Dark Premium** aesthetic, built with a focus on fluid animations, modern CSS (OKLCH), and type-safe architecture.
 
 ## 🛠️ Technical Architecture
 
-This portfolio is built using the latest modern web technologies, focusing on type safety, performance, and a "Dark Premium" aesthetic.
-
-- **Core Framework:** [React 19](https://react.dev/) & [TanStack Start](https://tanstack.com/start) for a full-stack, server-side rendered (SSR) experience.
-- **Routing:** [TanStack Router](https://tanstack.com/router) providing 100% type-safe routing across the application.
-- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/) – utilizing the latest engine for lightning-fast builds and modern CSS features.
-- **UI Components:** [Shadcn UI](https://ui.shadcn.com/) components customized for a sleek, premium dark theme.
-- **Data Management:** [TanStack Query](https://tanstack.com/query) for efficient data fetching, caching, and state management.
-- **Animations:** Custom scroll-triggered reveals using `IntersectionObserver` and CSS transitions for a fluid, performant feel.
+### Frontend
+- **Framework:** [React 19](https://react.dev/) for the latest features and performance.
+- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/) — utilizing the latest engine for lightning-fast builds and modern CSS features like native cascade layers and OKLCH color spaces.
+- **Animations:** 
+  - [Framer Motion](https://www.framer.com/motion/) for complex interactive components.
+  - Custom scroll-triggered reveals using `IntersectionObserver` and CSS transitions.
+  - View Transitions API support for smooth theme switching.
+- **UI Components:** [Shadcn UI](https://ui.shadcn.com/) components customized with a sleek, futuristic glassmorphism theme.
 - **Icons:** [Lucide React](https://lucide.dev/) for a consistent and crisp icon set.
-- **Form Handling:** [React Hook Form](https://react-hook-form.com/) with [Zod](https://zod.dev/) for robust, type-safe validation.
+
+### Backend
+- **Server:** [Node.js](https://nodejs.org/) with [Express](https://expressjs.com/).
+- **API:** Simple and scalable REST endpoints for handling contact forms and other dynamic data.
+
+## ✨ Key Features
+- **Dynamic Hero Section:** Features a terminal-style code window and a typewriter effect showcasing various roles.
+- **Coding Ratings:** Integration of competitive programming stats from Codeforces, LeetCode, and CodeChef.
+- **Immersive Background:** An animated, theme-aware background with floating orbs and grid overlays.
+- **Responsive Design:** Fully optimized for all device sizes with mobile-first layouts.
+- **Interactive Projects:** Hover-card effects and detailed project showcases.
+- **Performance:** Optimized asset loading, smooth scroll behavior, and lightweight builds.
 
 ## 🚀 Getting Started
 
@@ -36,15 +47,17 @@ To run this project locally, ensure you have [Node.js](https://nodejs.org/) inst
    ```bash
    npm run dev
    ```
-
-The application will be available at `http://localhost:3000` (or the port specified in your terminal).
+   *This will concurrently start both the Vite frontend (port 5173) and the Express backend (port 5000).*
 
 ## 📁 Project Structure
 
-- `src/routes/`: Contains the application pages and routes using TanStack Router's file-based routing.
-- `src/components/portfolio/`: Feature-specific components for the portfolio sections.
-- `src/components/ui/`: Reusable base UI components.
-- `src/lib/`: Utility functions and shared logic.
+- `src/`: The core frontend application.
+  - `components/portfolio/`: Feature-specific sections like Hero, About, Projects, etc.
+  - `components/ui/`: Reusable, low-level UI primitives.
+  - `hooks/`: Custom React hooks (e.g., `useReveal` for scroll animations).
+  - `styles.css`: Tailwind 4 configuration and global design system using OKLCH.
+- `server/`: Express backend source code.
+- `public/`: Static assets like images and PDFs.
 
 ---
 
