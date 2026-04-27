@@ -6,7 +6,7 @@ const platforms = [
     handle: "ramkrishna",
     rating: "731",
     icon: Terminal,
-    href: "https://codeforces.com/",
+    href: "https://codeforces.com/profile/krishnarammhd",
     color: "var(--brand-cyan)",
   },
   {
@@ -14,7 +14,7 @@ const platforms = [
     handle: "ramkrishna",
     rating: "1572",
     icon: Code,
-    href: "https://leetcode.com/",
+    href: "https://leetcode.com/u/ram_02_Krishna/",
     color: "var(--brand-violet)",
   },
   {
@@ -22,7 +22,7 @@ const platforms = [
     handle: "ramkrishna",
     rating: "1385",
     icon: ChefHat,
-    href: "https://www.codechef.com/",
+    href: "https://www.codechef.com/users/ram_krishna_02",
     color: "var(--brand-pink)",
   },
   {
@@ -30,7 +30,7 @@ const platforms = [
     handle: "ramkrishna",
     rating: "Active",
     icon: Github,
-    href: "https://github.com/",
+    href: "https://github.com/ram02krishna",
     color: "var(--brand-cyan)",
   },
 ];
