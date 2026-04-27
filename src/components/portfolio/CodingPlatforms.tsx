@@ -12,7 +12,7 @@ const platforms = [
   {
     name: "LeetCode",
     handle: "ramkrishna",
-    rating: "1556",
+    rating: "1572",
     icon: Code,
     href: "https://leetcode.com/",
     color: "var(--brand-violet)",
